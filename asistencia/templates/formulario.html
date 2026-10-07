@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de asistencia</title>
+</head>
+<body>
+    <h1>Asistencia</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        <p>
+            <label>Tipo Documento:</label><br>
+            <input 
+                type="text"
+                name="tipo_documento"
+                value="{{asistencia.tipo_documento|default:'' }}"
+                required
+            >
+        </p>
+
+        <p>
+            <label>Documento:</label><br>
+            <input 
+                type="text"
+                name="documento"
+                value="{{asistencia.documento|default:'' }}"
+                required
+            >
+        </p>
+
+        <p>
+            <label>Nombre:</label><br>
+            <input 
+                type="text"
+                name="nombre"
+                value="{{ asistencia.nombre|default:'' }}" 
+                required
+            >
+        </p>
+        <p>
+            <label>Apellidos:</label><br>
+            <input 
+                type="text"
+                name="apellido"
+                value="{{ asistencia.apellido|default:'' }}" 
+                required
+            >
+        </p>
+
+        <p>
+            <label>Whatsapp:</label><br>
+            <input
+                type="text"
+                name="whatsapp"
+                value="{{ asistencia.whatsapp|default:'' }}"
+                required
+            >
+        </p>
+
+        <p>
+            <label>Fecha:</label><br>
+            <input
+                type="date"
+                name="fecha"
+                value="{{ asistencia.fecha|default:'' }}"
+                required
+            >
+        </p>
+
+        <p>
+            <label>Asistió:</label><br>
+            <input
+                type="checkbox"
+                name="asistio"
+                value="{{ asistencia.asistio|default:'' }}"
+                required
+            >
+        </p>
+
+        <button type="submit">
+            Guardar
+        </button>
+
+    </form><br>
+
+    <a href="/asistencia/lista/">
+        Ver asistencias
+    </a>
+
+</body>
+</html>

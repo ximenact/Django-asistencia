@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETALLES</title>
+</head>
+<body>
+    <h1>Detalle de la asistencia</h1>
+
+    <p>
+        <strong>Tipo Documento:</strong>
+        {{asistencia.tipo_documento}}
+    </p>
+    <p>
+        <strong>Documento:</strong>
+        {{asistencia.documento}}
+    </p>
+
+    <p>
+        <strong>Nombre:</strong>
+        {{ asistencia.nombre }}
+    </p>
+    <p>
+        <strong>Apellido:</strong>
+        {{ asistencia.apellido }}
+    </p>
+
+    <p>
+        <strong>Whatsapp:</strong>
+        {{ asistencia.whatsapp }}
+    </p>
+
+    <p>
+        <strong>Fecha:</strong>
+        {{ asistencia.fecha }}
+    </p>
+
+    <p>
+        <strong>Asistió:</strong>
+        {{ asistencia.asistio }}
+    </p>
+
+    <br>
+
+    <a href="/asistencia/editar/{{ asistencia.id }}/">
+        Editar
+    </a>
+
+    <br><br>
+
+    <a href="/asistencia/lista/">
+        Volver
+    </a>
+    
+</body>
+</html>

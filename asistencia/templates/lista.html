@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LISTAR</title>
+</head>
+<body>
+    <h1>Lista de asistencias</h1>
+
+    <a href="/asistencia/">
+        Nuevo contacto
+    </a>
+
+    <hr>
+
+{% for asistencia in asistencia %}
+
+    <h3>{{ asistencia.nombre }}</h3>
+
+    <a href="/asistencia/detalle/{{ asistencia.id }}/">
+        Ver
+    </a>
+
+    |
+
+    <a href="/asistencia/editar/{{ asistencia.id }}/">
+        Editar
+    </a>
+
+    |
+
+    <a href="/asistencia/eliminar/{{ asistencia.id }}/">
+        Eliminar
+    </a>
+
+    <hr>
+
+{% empty %}
+
+    <p>No hay asistencias.</p>
+
+{% endfor %}
+    
+</body>
+</html>
